@@ -1,0 +1,21 @@
+<div class="d-flex flex-column align-items-center m-4">
+        <h2>Je crée mon compte</h2>
+        <div class="form_container p-3">
+            <form [formGroup]="signUpForm" class="form_bloc" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="email">
+                        Email :
+                    </label>
+                    <input type="email" id="email" class="form-control" formControlName="email"> 
+                </div>
+                <div class="form-group">
+                    <label for="password">
+                        Password :
+                    </label>
+                    <input type="password" id="password" class="form-control" formControlName="password"> 
+                </div>
+                <button class="btn btn-primary" type="submit" [disabled]="signUpForm.invalid">CREER MON COMPTE</button>
+            </form>
+            <p class="text-danger">{{ errorMessage }}</p>
+        </div>
+    </div>
